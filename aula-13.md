@@ -16,3 +16,9 @@ arr.splice(indice que quero começar e indice que quero terminar) - pode adicion
 para adicionar - arr.splice(1,0, 'a') - que a artir do indice 1 adiciona um item (0), 'a'.
 
 arr.splice(1,4, 2, 3, 4) - a partir do indice um, adiciona 4 que será o 2, 3 e 4
+
+every() / some()
+
+arr.map() - percorre todos os itens do array e retona um novo array
+
+arr.filter() - cria um novo array baseado nos itens que estou passando e vai retornar um novo array
