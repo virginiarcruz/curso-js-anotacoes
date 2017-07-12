@@ -1,7 +1,7 @@
 # Arrays - concat, reverse, forEach
 
 * arr.toString() - converte array em string por virgula
-* arr.concat(item) - faz mais ou menos o que o push faz. Gera um novo array com os novos valores.
+* arr.concat(item) - faz mais ou menos o que o push faz. Gera um novo array com os novos valores. ..
 Posso concatenar array com array arr.concat([],[]).
 * arr.unshift() - adiciona o item no começo
 * arr.shift() - remove o primeiro item do array
