@@ -12,7 +12,7 @@
 
 * indexOf() - procura se um valor existe no indice do array.  
 Passo como parâmetro o índice do valor que estou procurando.  
-Posso dizer onde o _indexOf_ deve começar a busca. indexOf('a',1);   
+Posso dizer onde o _indexOf_ deve começar a busca indexOf('a',1);   
 	* 'a' - o valor que quero procurar  
 	* 1 - a partir do item 1  
 
