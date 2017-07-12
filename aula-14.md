@@ -1,12 +1,15 @@
 # Métodos de Array - reduce(), indexOf
 
-* reduce() - reduz os valores do array. Pode somar os números, * concatenar. Se utilizar numeros ele soma todos.
+* reduce() - reduz todos os itens do array em um único item. Pode somar os números, fazer concatenação de strings. Se utilizar numeros ele soma todos.  
+
 
         var reduce = arr.reduce( function(acumulado, atual, index, array) {
             return acumulado + atual;
         },0);
 
-    _Obs: o '0', passado ao final diz em qual item ele deve começar._
+    _Obs: o '0', passado ao final diz em qual item ele deve começar. Se não utilizar o valor no final ele utiliza o primeiro + o segundo_
+    _ Poderia ser no parâmentro function (x,y, index, array)
+    _Pega todo valor que já está acumulado e soma com o valor atual. Ex: arr = [1,2,3] soma 1 + 2 = 3 e 3 + 3 = 6;_
 
 * reduceRight() - faz a redução da direita para a esquerda
 
@@ -17,6 +20,6 @@ Posso dizer onde o _indexOf_ deve começar a busca indexOf('a',1);
 	* 1 - a partir do item 1  
 
 
-* lasIndexOf() - procura do final para o início.
+* lastIndexOf( ) - procura do final para o início.
 
-* Array.isArray() - retorna se o elemento passado é array - true/false
+* Array.isArray(nomeDoArray) - retorna se o elemento passado é array - true/false.
