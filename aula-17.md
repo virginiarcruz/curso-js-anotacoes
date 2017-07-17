@@ -54,6 +54,7 @@ i: ignore case
 
         /[0-9]/g - de 1 ao 9
         /[a-z]/g - de a a z 
+        /0|1|2|3/ - 0 ou 1 ou 2 ou 3
 
 * Tabela Unicode -  <http://www.ftrain.com/unicode>
 
