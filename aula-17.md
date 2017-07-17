@@ -63,7 +63,7 @@ i: ignore case
 
             texto.replace(/de/g, 'DE')
 
-* Posso agrupar um item por () - $1 - pega a primeira captura, $2 a segunda
+* Posso agrupar um item por () fazendo **grupos de captura** - $1 - pega a primeira captura, $2 a segunda
 
             texto.replace(/(de)/g, '--$1--') / Con --de-- --de--
 
