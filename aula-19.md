@@ -8,6 +8,7 @@
 * m = flag após a / da expressão.  
     Ex: Faz a busca por mais uma linha. Por ex quando busco o caractere de início da string ele busca em todas as linhas.
 * ? - é 1 ou 0 caractere do que vem antes dele. Captura o mínimo de caracteres necessários para fazer o match. (Captura não gulosa) 
+
     Ex: <h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>
 
          (<\w+>.+?(<\/\w+>)) - vai capturar a linha que começa com < e termina com >. Então captura início e fechamento de tag
@@ -46,6 +47,9 @@
 
             Quero pegar só os números
             name.match(/\d/g) //  ['1','2','3'];
+
+    Posso passar um segundo parâmetro no construtor que são as flags.   
+    ex: var regex = new RegExp('nando', 'g');
 
 * test - busca uma string, a diferença é que verifica se o item existe. Não funciona com string, funciona com a RegExp
         Ex: name = fernando
