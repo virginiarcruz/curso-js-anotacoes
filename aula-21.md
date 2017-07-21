@@ -36,13 +36,23 @@ A diferença para o setInterval é que o Timeout só roda uma vez, o setInterval
 
 * clearTimeout(id) / clearInterval - limpam o setTimeout ou setInterval
 
-    var counter = 0;
+        var counter = 0;
+        var $button = doc.querySelector('[data-js="button"]');
+        var temporizador;
 
         function timer(){
             console.log('timer', counter++);
             if (counter > 20)
                 return;
-            setTimeout(timer, 1000);
+            temporizador = setTimeout(timer, 1000);
         }
 
         timer();
+
+        $button.addEventListener('click', function(){
+            clearTimeout(temporizador)
+        }, false);
+
+Na função acima quando clicar no botão o temporizador vai parar.  
+
+_Para o javascript vamos utilizar sempre o data-js="nome" ao invés de id para capturar o item._
