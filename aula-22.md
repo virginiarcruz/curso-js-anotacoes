@@ -1,4 +1,4 @@
-# Propriedade e métodos de funções, Arry-like como Arrays
+# Propriedade e métodos de funções, Arry-like como Arrays, Editorconfig
 
 * .name - retorna o nome da função.
 * .length - conta a quantidade de parâmetros que a função pode receber.
@@ -83,7 +83,8 @@ Pode ser sobrescrito.
 # Array-like como Arrays
 
 * Array.prototype - Neste formato consigo estender qualquer objeto JS.  
-Passa o arguments como o this da função. O forEach vai iterar o arguments. Consigo no caso abaixo fazer a iteração como se fosse o array.
+Passa o arguments como o this da função. O forEach vai iterar o arguments. Consigo no caso abaixo fazer a iteração como se fosse o array.   
+Facilita a leitura.
 
         function myfunction () {
              Array.prototype.forEach.call(arguments, function (item, index){
@@ -106,3 +107,7 @@ Passa o arguments como o this da função. O forEach vai iterar o arguments. Con
 
 
 
+# Editorconfig
+
+* O arquivo editorconfig na raiz do projeto faz com que todos os arquivos tenham a configuração setada neste arquivo.  
+É utilizado para padronização dos códigos.
