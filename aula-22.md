@@ -43,7 +43,8 @@ Posso dizer quem é o this da função.
    
     Quando não tiver o this, posso passar null, um objeto vazio (obj{}), para ser o this, ou ainda posso passar a própria função, sem executar.
 
-* apply - Passando os parâmetros de forma dinâmica. Cada item o array vai ser quebrado em um argumento da função.;
+* apply - Passando os parâmetros de forma dinâmica. Cada item o array vai ser quebrado em um argumento da função.
+Passa pelos argumentos 1 a 1. Por exemplo um array.
 
 
          function myfunction (a,b,c,d) {
@@ -98,14 +99,14 @@ Facilita a leitura.
 
         function myfunction () {
              var result = Array.prototype.reduce.call(arguments, function (acumulado, atual, index){
-                return acumulado + atual;
+                return +acumulado + +atual;
              });
              console.log( result);
         }
 
         myFunction(1,2,3,4,5,6,7,8);
 
-
+**IMPORTANTE** - SE COLOCAR O return +acumulado + +atual AO INVÉS DE return acumulado + atual, ELE CONVERTE O VALOR PARA NÚMERO. POSSO USAR O + OU O NUMBER.
 
 # Editorconfig
 
