@@ -21,7 +21,7 @@
         var vir = new String('Virginia'); - construtor de string
 
         virginia.charAt(0) - exibe 'v'
- * .concat(string1, string2) - concatena as strings sem modificar a prinicipal
+ * .concat(string1, string2) - concatena as strings sem modificar a prinicipal. Posso utilizar também o valor **+=** this.valor, que vai concaternar da mesma forma.
 
  * indexOf(string , [start]) -  busca a string no indice passado 
  * replace(string,string) - troca os caracteres. Faz a substituição somente da primeira string encontrada
