@@ -5,7 +5,7 @@
 * .parentNode - vai percorrer o nó que é pai do elemento solicitado.  
 Exemplo:
 
-        var $main = document.queruSelector('.main');
+        var $main = document.querySelector('.main');
         console.log($main.parentNode); // vai retornar o pai de main;
 
 * .childNodes - traz todos os nós que são filhos do elemento que estou buscando.
