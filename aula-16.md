@@ -21,7 +21,7 @@
         var vir = new String('Virginia'); - construtor de string
 
         virginia.charAt(0) - exibe 'v'
- * .concat(string1, string2) - concatena as strings sem modificar a prinicipal
+ * .concat(string1, string2) - concatena as strings sem modificar a prinicipal. Posso utilizar também o valor **+=** this.valor, que vai concaternar da mesma forma.
 
  * indexOf(string , [start]) -  busca a string no indice passado 
  * replace(string,string) - troca os caracteres. Faz a substituição somente da primeira string encontrada
@@ -30,6 +30,7 @@
  * split([separador], limite) - quebra a string e transforma em um array. Se não passar nenhum parâmetro ele cria um array com a string inteira. Se passar ele quebra a partir do indice passado. Gera um novo array
 
             var arrVir = vir.split('r'); // ['vi', 'g'. 'i', 'n', 'i', 'a']
+            var arrVir = vir.split(' '); // ['v', 'i', 'r', 'g'. 'i', 'n', 'i', 'a'] 
     
     _Posso juntar com outro array utilizando o .join()_
 
