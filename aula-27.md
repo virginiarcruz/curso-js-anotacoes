@@ -90,29 +90,38 @@ _manipular sempre dentro de um document fragment porque é mais rápido e mais p
                 return item;
         });
 
-ou
+ou por slice
 
         var arr2 = arr.slice(); // sem índice ele imprime todos os números
 
 Se quero copiar divs por exemplo, elas virão como **arraylike** e não como array, então tenho que fazer por Array.prototype. Serão o mesmo array só que cópias diferentes.
 
-        var $divs = document.querySelectorAll('div');
-        var $divsCopy = Array.prototype.slice.call($divs);
+        var $divs = document.querySelectorAll('div'); // pega todas as divs do documento
+        var $divsCopy = Array.prototype.slice.call($divs); // utilizando uma linha faz a copia do array
 
         console.log($divs, $divCopdy, $divs === $divCopy);
 
 
 * Como saber o tipo de dado real do elemento.
 
-* Object.prototype.toString - retorna qualquer tipo de objeto
+* Object.prototype.toString - retorna o tipo do objeto. Ex, que o objeto é do tipo Array, que a function é do tipo Function e etc.
 
         Object.prototype.toString.call(objeto);
 
 _Testando os tipos de objeto_
+        
+        function is(obj) {
+                return Objetct.prototype.toString.call(obj);
+        }
 
         function isArray(){
             return is(obj) === '[object Array]';
         }
 
-        console.log( isArray([1,2,3])); o retorno será true
+        function isObjetct(){
+            return is(obj) === '[object Objetc]';
+        }
+
+        console.log( isArray([1,2,3]) ); o retorno será true
+        console.log( isObject([prop:1, prop:2]) ); o retorno será true
 
