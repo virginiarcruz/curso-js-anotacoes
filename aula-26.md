@@ -1,48 +1,51 @@
 # Aula 26 - DOM
 
+* DOM - modelo do coumento em formato de objeto.
+
 # Percorrer Elementos
 
-* .parentNode - vai percorrer o nó que é pai do elemento solicitado.  
+* .parentNode - vai percorrer o nó que é pai do nó que estou selecionando.  
 Exemplo:
 
-        var $main = document.querySelector('.main');
+        var $main = document.querySelector('.main'); // quero pegar a div main
         console.log($main.parentNode); // vai retornar o pai de main;
 
-* .childNodes - traz todos os nós que são filhos do elemento que estou buscando.
+* .childNodes - traz todos os nós que são filhos (estão dentro) do elemento que estou buscando.
 
         console.log($main.childNodes); // vai retorna uma lista com os nós, filhos de main
 
-* .firstChild - retorna o primeiro filho;
-* .lastChild - retorna o último filho;
-* .nextSibling - mostra quem é o irmão, quem está abaixo daquela tag
+_as quebras de linha também são consideradas como nós. Cada enter conta como nó_
+
+* .firstChild - $main.firstChild; retorna o primeiro filho;
+* .lastChild - $main.lastChild; retorna o último filho;
+* .nextSibling - mostra quem é o irmão, quem está abaixo daquela tag. Diferente de quem estádentro, mostra a tag irmã;
 * .previousSibling - mostra o irmão anterior;
 * .nodeType - mostra o que tipo de nó selecionado.
-* .nodeValue - pega o valor daquele elemento chamado.
+* .nodeValue - pega o valor daquele elemento chamado. É o elemento textual do text e comment.
 
-        console.log($main.firstChild.nodeValue); // vai mostrar o conteúdo daquele elemento setado.
+        console.log($main.firstChild.nodeValue); // vai mostrar o conteúdo do primeiro filho de main
 
-* .nodeName - mostra quem é o nome daquele nó
+* .nodeName - mostra o nome daquele nó
 * .children - não é pradrozinada. Mas podemos utilizar. TRaz uma coleção de elementos HTML
 
         console.log($main.children);
 
-* firstElementChildren -traz só aqueles nós que são elementos do DOM. Este ignora nós de texto solto ou de comentário. Pega só o elemento
+* firstElementChild - $main.firstElementChild - traz só aqueles nós que são elementos do DOM. Este **ignora nós de texto solto ou de comentário**. Pega só o elemento de marcação.
 
-* lastElementChildren - traz o último
-* nextElementSibling - 
-* childElementCount - quantidade de elementos dentro de um nó.
+* lastElementChildren - traz o último;
+* nextElementSibling - traz o próximo elemento que é irmão;
+* childElementCount - quantidade de elementos dentro de um nó. Exibe números.
 
 
-# Métodos baseados no DOM, utilizados para a manipulação
+# Métodos baseados no DOM, utilizados para a manipulação de elementos do DOM
 
-* .hasAttribute(name) - verifica se o elemento tem aquele atributo que você passou por parâmetro.
+* .hasAttribute(name) - passa o nome do atributo para verificar se o elemento tem aquele atributo que você passou por parâmetro.
 
-        console.log($main.hasAttribute('.class')); // retorna true ou false
+        console.log($main.hasAttribute('.class')); // Pergunto se o main tem class e ele retorna true ou false
 
 * .hasAttributes - verifica se aquele elemento tem qualquer atributo
 
-        console.log($main.firstElementChild.hasAttributes()); // retorna se o elemento tiver qualquer atributo.
-        true ou false
+        console.log($main.firstElementChild.hasAttributes()); // retorna se o elemento tiver qualquer atributo. Retorna true ou false;
 
 * .appendChild(child) - adiciona um filho em algum elemento. No final daquele elemento.
 
