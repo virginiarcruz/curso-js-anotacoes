@@ -47,12 +47,12 @@ _as quebras de linha também são consideradas como nós. Cada enter conta como 
 
         console.log($main.firstElementChild.hasAttributes()); // retorna se o elemento tiver qualquer atributo. Retorna true ou false;
 
-* .appendChild(child) - adiciona um filho em algum elemento. No final daquele elemento.
+* .appendChild(child) - adiciona um filho em algum elemento. No final passa o parâmetro que eu quero adicionar naquele elemento.
 
         var $main = document.queruSelector('.main');
         var $mainContent = document.queruSelector('.main-content');
         var $mainHeader = document.queruSelector('.main-header');
-        $mainContent.appendChild($mainHeader);
+        console.log( $mainContent.appendChild($mainHeader) );
 
 _Neste caso ele irá retirar o mainHeader da posição inicial e colocar dentro do mainContent_
 
@@ -65,15 +65,30 @@ _Neste caso ele irá retirar o mainHeader da posição inicial e colocar dentro 
        
         $mainHeader.cloneNode(true);
 
-* .hasChildNodes - verfica se aquele elemento tem filhos. Retorna true ou false
+* .hasChildNodes - verfica se aquele elemento tem filhos. Retorna true ou false;
 
 * .removeChild(quem vou remover) - remove o filho.
-* .replaceChild(quem vou substituir) - substitui o filho.
-* document.createElement - você usa uma tag e ele cria o elemento
+* .replaceChild(new, old) - substitui o filho. Faz o replace.
+
+        $main.replaceChild($mainHeader, $mainFooter);
+
+_Pega o $mainHeader e coloca no lugar do $mainFooter_
+
+* createTextNode(text) - cria um nó de texto. É um elemento do DOM
+        
+        var newTextNode = document.createTextNode('texto inserido');
+
+* document.createElement - você passa uma tag e ele cria o elemento
 
         var $newP = document.createElement('p');
+        $newP.appendChild(newTextNode);
+        $main.appendChild($newP);
 
-# Atributos
+_Dentro do main aparece um parágrafo com o texto de newTextNode_
+
+# Atributos de Elementos do DOM
+
+        var $main = document.querySelector('main');
 
 * element.id 
 
@@ -81,7 +96,9 @@ _Neste caso ele irá retirar o mainHeader da posição inicial e colocar dentro 
 
 * element.className - posso tanbém modificar a classe setando um valor
 
-        $main.className = 'arroz'
+        $main.className;
+
+        console.log($main.className = 'arroz'); estou modificando o nome da classe main para arroz. Posso fazer a mesma coisa com o ID.
 
 * getAttribute('class') - você passa o atributo que ele é no HTML. 
 
