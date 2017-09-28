@@ -100,10 +100,10 @@ _Dentro do main aparece um parágrafo com o texto de newTextNode_
 
         console.log($main.className = 'arroz'); estou modificando o nome da classe main para arroz. Posso fazer a mesma coisa com o ID.
 
-* getAttribute('class') - você passa o atributo que ele é no HTML. 
+* getAttribute('class') - você passa o atributo que ele é no HTML. Retorna sempre string.
 
          $main.getAttribute('class'); // retorna a classe do main.
 
-* setAttribute - posso modificar o nome do atributo ou criar
+* setAttribute(attr, value) - posso modificar o nome do atributo ou criar novos atributos.
 
         $main.setAttribute('data-js', 'main-datajs'); modifica ou cria o nome da classe data-js
