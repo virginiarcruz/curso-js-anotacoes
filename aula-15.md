@@ -9,18 +9,37 @@
                 _escopo_
             })();
 
-* this - aponta para o objeto que ele está dentro. Aparece em:  
-  **métodos de objetos** - faz uma referência ao objeto principal.  
-  **funções** - pode ter 2 valores, no objeto global e quando faz referência ao objeto instaciado.
+* this - aponta para o objeto que ele está dentro. É uma referência para o objeto principal.
 
-  Para criar um construtor posso fazer a função abaixo e o this vai apontar para 'constructor'
+Aparece em:  
+  - **métodos de objetos** - faz uma referência ao objeto principal.  
+  - **funções** - pode ter 2 valores, no objeto global e quando faz referência ao objeto instaciado.
+
+* Window - é o objeto global dentro do browser.
+
+
+
+# Construtor
+
+* new cria uma nova referência de object.
+    - Por exemplo:
+                        
+              var newObject = new Object();
+
+  - Para criar um construtor posso fazer a função abaixo e o this vai fazer refeência ao  'constructor'. Aponta para o que estiver em constructor.
+    - geralmente começa com letra maiúscula
             
             function MyConstructor(){
                 this.prop1 = 'prop1';
                 this.prop2 = 'prop2';
             }
-            var constructor = new MyConstructor();
+
+            var constructor = new MyConstructor(); // é necessário o uso do new para criar o construtor.
             console.log( 'MyConstructor', constructor);
+
+    - O constructor herda as propriedades de MyConstrutctor 
+
+* Arguments - é um objeto arraylike que parece com um array mas não é um array.
 
             function MyConstructor(name, lastName, age) {
                 this.name = name;

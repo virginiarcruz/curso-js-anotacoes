@@ -41,7 +41,7 @@ Passa o número do índice(0) após ao item que quero mostrar. A partir de item 
           return item < 5; // vai retornar true se todos os itens do array forem menor que 5
         }
 
-  * some() - faz a mesma coisa do every, só que retorn true se pelo menos um dos elementos testado for true.
+  * some() - faz a mesma coisa do every, só que retorna true se pelo menos um dos elementos testado for true.
 
         var some = arr.some(function(item){
           return item % 2 === 0; // vai retornar true se pelo menos um item for true
