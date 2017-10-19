@@ -10,8 +10,8 @@ Ex: /m/ - quero pegar de um texto todas as letras M
 
 _Obs: Se uso de forma global sem a expressão após a / ele busca pelo primeiro item que achar._
 
-g: Global
-i: ignore case
+- g: Entrada Global
+- i: ignore case
 
 # Objeto de Expressões Regulares
 
@@ -22,17 +22,16 @@ i: ignore case
 
         texto.match(/m/g);
 
-* \w : todos os caracteres alfanuméricos
+* \w : todos os caracteres alfanuméricos, inclusive o _ (underscore)
 * \d : representa dígitos
 
         texto.match(/\w/g); - traz um array com todas as letras da string
 * sempre que o regex não conseguir fazer um match ele retorna null
 
-    Ex: Encontrar números
-
-        var texto.match(/\d/) - todos os números
-        var texto.match(/\d\d/) - carrega 2 números
-        var texto.match(/\d\d/g) - carrega 2 números globalmente. Trás classes de caracteres.
+    Ex: Encontrar números  
+    -  var texto.match(/\d/) - todos os números
+    - var texto.match(/\d\d/) - carrega 2 números
+    - var texto.match(/\d\d/g) - carrega 2 números globalmente. Trás classes de caracteres.
 
 
 * classes de caracteres - quando quero pegar listas específicas. Iniciada por []
@@ -54,14 +53,18 @@ i: ignore case
 
         /[0-9]/g - de 1 ao 9
         /[a-z]/g - de a a z 
+        /[a-g]/g - de a a g - minusculos, se quiser maiúsculo, coloco as letras maiúsculas. 
         /0|1|2|3/ - 0 ou 1 ou 2 ou 3
+        /[A-Za-z0-9]/ ou [\w] - pega todos os caracteres alfanuméricosßß
+        /[A-z]/ - pega todo tipo de caractere até os especiais
 
 * Tabela Unicode -  <http://www.ftrain.com/unicode>
 
 * **replace()** - se quero fazer replace de todos os itens
     Ex: quero substituir todos os 'de' por 'DE';
 
-            texto.replace(/de/g, 'DE')
+            texto.replace(/de/, 'DE') - só muda o primeiro
+            texto.replace(/de/g, 'DE') - faz o replace de todos os itens 'de'
 
 * Posso agrupar um item por () fazendo **grupos de captura** - $1 - pega a primeira captura, $2 a segunda
 
@@ -77,3 +80,14 @@ i: ignore case
         texto.replace(/(d)(e)/g, function(capturaTotal, d, e) {
             return (d + e).toUpperCase();
         })
+
+    - converter todas as letras para maiúsucla
+
+            'Virginia'.replace(/(\w)/g), function (capturaTotal, letra) {
+                return letra.toUpperCase();
+            }
+    - converter letras intercaladas maiúsucla e minuscula
+            
+            'Virginia'.replace(/(\w)(\w)/g), function (capturaTotal, letra1, letra2) {
+                return letra1.toUpperCase() + letra2.toLowerCase();
+            }
