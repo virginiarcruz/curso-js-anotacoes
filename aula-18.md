@@ -12,7 +12,7 @@
 
 * [^abc] -  o match deve ser feito em qualquer coisa que não seja a, b ou c. **A negação tem que ser sempre dentro da lista []**.
 * \W - faz o match com qualquer caractere menos os alfanuméricos.
-* \D - qualquer caractere que não seja número
+* \D - qualquer caractere que **não seja número**
 * \S - qualquer caractere menos os _espaços em branco_   
 Ex: pegar todos os caracteres do texto [\S\s]
 
@@ -40,16 +40,38 @@ Ex: espaço em branco seguido de um número ou não.
 * + - faz o match com pelo menos um ou mais caracteres.
 
         \s+ // seleciona todos os _s_ do texto
-* '*' - zero ou mais ocorrências '\w*'
 
-Ex: tenho uma url: http://www.google.com.br https://google.com.br http://google. Quero validar as urls.
+* * - zero ou mais ocorrências do item anterior '\w*
+* \w+ - qualquer caractere alfanumérico, quantos vezes forem necessários
 
-    /https?:\/\/\w+[.\w]+/
+# Exemplos reais
+
+- tenho uma url:   
+   http://www.google.com.br   
+   https://google.com.br   
+   http://google. 
+   
+   Quero validar as urls.  
+    - tenho que fazer um match
+
+   regex =  /https?:\/\/\w+[.\w]+/
     [.\w] - ponto seguido de qualquer palavra
 
-validar email:
-virginia@email.com
-rodrigues@gmail.com
-meunome@meuemail.org
+- validar email:
+    virginia@email.com
+    rodrigues@gmail.com
+    meunome@meuemail.org
 
-    [\w+]+@+\w+\.\w+([.\w]+)?
+    Regex - [\w+]+@\w+\.\w+([.\w]+)?
+
+- Tenho essa sequencia = ?s=lala&b=bebe&c=cce
+
+            var queryString = '?s=lala&b=bebe&c=cc';
+
+            queryString.replace(/[?&](\w+)=(\w+)/g, fucntion (regex, key, value){
+                    console.log(key,value)
+            });
+
+            s lala
+            b bebe
+            c cce
