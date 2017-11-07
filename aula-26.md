@@ -150,3 +150,18 @@ Exemplo:
 * setAttribute(attr, value) - posso modificar o nome do atributo ou criar novos atributos.
 
         $main.setAttribute('data-js', 'main-datajs'); modifica ou cria o nome da classe data-js
+
+
+# Resolução do exercício - observações
+
+* Tenho uma função construtora e quero extender, posso usar métodos. No caso abaixo retorna uma nodelist e vou chamar pelo prototype:  
+
+        function DOM(tagName) {
+          this.element = doc.querySelectorAll(tagName);
+        };
+
+
+        DOM.prototype.on = function on(eventType, callback) { // o this.element é um arrayLike
+        Array.prototype.forEach.call(this.element, function (element) { // cada vez que entrar aqui vai atribuir um valor a element
+        element.addEventListener(eventType, callback, false);
+        });

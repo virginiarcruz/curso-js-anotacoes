@@ -40,22 +40,27 @@
     * element.href(para links)
     * element.title
     * element.src
+    * getAttribute(attr)
+
 
 
 # DOM - Manipular com performance
 
-    * document.createDocumentFragment() - cria um fragmento de documento, como se fosse um document em branco para que você possa manipular nós. Então você trabalha fora do DOM e inclui os elementos todos de uma vez só.
+* document.createDocumentFragment() - Sempre que se trabalha com DOM a manipulação é lenta, porque ele tem que fazer toda uma redenrização.
+Cria um fragmento de documento, como se fosse um documento em branco para que você possa manipular nós. Então você trabalha fora do DOM e inclui os elementos todos de uma vez só no HTML. Isso deixa a perfomance melhor porque você trabalha fora do DOM.
+  - Não tem parentNode, o parentNode dele sempre vai ser null. É como se fosse um documento em branco.
 
-            var fragment = document.createDocumentFragment();
-            var childP = document.createElement('p');
-            var textChildP = document.createTextNode('Texto da tag P!');
-    
-            chilP.appendChild(textChildP); // adicionei o texto dentro do <p>
-            fragment.appendChild(childP); e adicionei o <p> dentro do fragment
+        var fragment = document.createDocumentFragment(); // é um método
+        var childP = document.createElement('p');
+        var textChildP = document.createTextNode('Texto da tag P!');
 
-            document.body.appendChild(fragment); // adiciono só depois que terminar de manipular.
+        chilP.appendChild(textChildP); // adicionei o texto dentro do <p>
+        fragment.appendChild(childP); e adicionei o <p> dentro do fragment
+
+        document.body.appendChild(fragment); // adiciono só depois que terminar de manipular.
     
-_manipular sempre dentro de um document fragment porque é mais rápido e mais performatico para manipular o DOM_
+        
+ - manipular sempre dentro de um document fragment porque é mais rápido e mais performatico para manipular o DOM
 
 # Posição dos scripts no HTML
 
@@ -90,11 +95,11 @@ _manipular sempre dentro de um document fragment porque é mais rápido e mais p
                 return item;
         });
 
-ou por slice
+  - ou por slice
 
         var arr2 = arr.slice(); // sem índice ele imprime todos os números
 
-Se quero copiar divs por exemplo, elas virão como **arraylike** e não como array, então tenho que fazer por Array.prototype. Serão o mesmo array só que cópias diferentes.
+  - Se quero copiar divs por exemplo, elas virão como **arraylike** e não como array, então tenho que fazer por Array.prototype. Serão o mesmo array só que cópias diferentes.
 
         var $divs = document.querySelectorAll('div'); // pega todas as divs do documento
         var $divsCopy = Array.prototype.slice.call($divs); // utilizando uma linha faz a copia do array
@@ -106,9 +111,9 @@ Se quero copiar divs por exemplo, elas virão como **arraylike** e não como arr
 
 * Object.prototype.toString - retorna o tipo do objeto. Ex, que o objeto é do tipo Array, que a function é do tipo Function e etc.
 
-        Object.prototype.toString.call(objeto);
+        Object.prototype.toString.call(objeto); // consegue pegar qualquer tipo de objeto.
 
-_Testando os tipos de objeto_
+  - Testando os tipos de objeto
         
         function is(obj) {
                 return Objetct.prototype.toString.call(obj);
