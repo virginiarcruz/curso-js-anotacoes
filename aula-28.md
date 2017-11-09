@@ -101,7 +101,7 @@ EXEMPLO:
                 message : 'ok';
             }
     - Posso pegar os dados desse JSON que nada mais é do que um objeto javascript com o responseText, da seguinte forma.
-        1. Primeiro tenho que dar um **parse **, preciso parsear o dados transformando-os em javascript
+        1. Primeiro tenho que dar um **parse**, preciso parsear o dados transformando-os em javascript
 
             var data = JSON.parse(ajax.responseText);
 
