@@ -58,3 +58,8 @@
 
  * keyup - quando pressiona a tecla e solta.
  * keydown - quando aperta a tecla.
+ * change - faz modificação de valores.
+
+        on('[data-js="select"]', 'change', function(event){
+            console.log(this.value) 
+        });
