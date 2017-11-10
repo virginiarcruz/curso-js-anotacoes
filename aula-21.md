@@ -5,7 +5,7 @@
 
 * Event loop - coloca eventos na fila do javascript
 
-* setTimeout() - adiciona alguns eventos async mas com um temporizador. É método de window. Recebe uma função com os segundo que ele vai contar para executar. A função abaixo mostra o início e após 1 segundo (1000)ele executa o setTimeout();
+* setTimeout() - adiciona alguns eventos async mas com um temporizador. É método de window. Recebe uma função com os segundos que ele vai contar para executar. A função abaixo mostra o início e após 1 segundo (1000)ele executa o setTimeout();
 
         setTimeout( function(){
             console.log('executou setTimeout);
