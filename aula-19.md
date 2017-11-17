@@ -48,7 +48,10 @@
 
 # Construtor RegExp
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> efe0de58314ccdf8043cc87dc706c39f149ac2f7
 * Construtor
 
             var regex = new RegExp('nando');
@@ -57,7 +60,8 @@
             fernando.match( regex); // ["nando"]
             var name = "fer123nando" //
 
-            regex - new RegExp('\\d'); preciso escapar a barra então precisa da \\
+            regex - new RegExp('\\d'); preciso escapar a barra então precisa da \\, se colocar só uma ele vai retornar a regex.
+            Mesa coisa com o \. precisa ser \\.
 
             Quero pegar só os números
             name.match(/\d/g) //  ['1','2','3'];
@@ -65,9 +69,8 @@
     Posso passar um segundo parâmetro no construtor que são as flags.   
     ex: var regex = new RegExp('nando', 'g');
 
-* test - busca uma string, a diferença é que verifica se o item existe. Não funciona com string, funciona com a RegExp
+* test - busca uma string, a diferença é que verifica se o item existe. Não funciona com string, funciona com a RegExp. **Só pode ser usado com regex, não pode ser usado com string**
         Ex: name = fernando
-
 
             /\d/.test(name) // retorna true
             /z/.test(name) // retorna false
@@ -77,12 +80,21 @@
 
             regex.exec(name) // retorna ["1"] _e cada vez que executa ele exibe o próximo número. Até que todos os resultados seja exibidos e ele retorna null_
 
-            var result 
+            var regex = /\d/g;
+            var name = 'fer123nando';
+            var result;
             while ( result = regex.exec(name) !== null) {
-                console.log(result);
+                console.log(result);  // retorna ["1"] retorna ["2"] retorna ["3"]
             }
+
+    - Está procurando por números, vai retornar a ocorrência toda vez que encontrar
+
+            regex.lastIndex - retornar 4 que é o último índice
+
 
 # Caracteres especiais
 
 * \n - quebra de linha. Ex: console.log('Resultado:\n', result)
-* \ - escapar caracteres por exemplo uma aspa. Ex: Julio's > Julio\'s
+* \t - faz uma tab
+* \ - escapar caracteres dentro da string, por exemplo uma aspa. 
+    - Ex: Julio's > Julio\'s

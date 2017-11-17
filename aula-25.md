@@ -61,6 +61,13 @@
  * keyup - quando pressiona a tecla e solta. Pressionou e soltou ele vai mostrando quantos caracteres foram exibidos.
 
  * keydown - quando aperta a tecla.
+<<<<<<< HEAD
+ * change - faz modificação de valores.
+
+        on('[data-js="select"]', 'change', function(event){
+            console.log(this.value) 
+        });
+=======
 
  * select change - faz a modificação de valores do select
     
@@ -69,3 +76,4 @@
             });
 
     - Aqui o valor selecionado no select ele vai mostrar no input;
+>>>>>>> efe0de58314ccdf8043cc87dc706c39f149ac2f7
