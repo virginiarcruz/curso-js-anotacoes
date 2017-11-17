@@ -77,7 +77,7 @@ EXEMPLO 2:
             console.log(increment());
 
         })();
-- agora vai incrementar baseado no counter que está em escopo, dentro da função.
+- agora vai incrementar baseado no counter que está dentro da IIFE. A function cria um escopo local e o counter ++ retorn o 0 1 2 3 4.
 
 
 # Manipulando CSS
@@ -94,3 +94,20 @@ EXEMPLO:
 - Se quiser posso fazer direto
 
         $div.setAttribute('style', 'width: 100px; height: 100px; background: blue');
+
+- Modificar classes do elemento usando o **ClassList**
+
+        console.log($div.ClassList) 
+        
+    - traz um array com uma lista de classes que tem no elemento setado.
+
+- Se tenho um elemento com várias classes e quero manipular essas classes, tenho: add, remove, toggle e contains
+
+        $div.classList.add('blue'); // vai adicionar a class .blue
+        $div.classList.contains('container'); // vai verificar se existe a class container na div.
+
+        $div.addEventListener('click', function (){
+                this.classList.toggle('blue');
+        }, false);
+    
+    - Para o último caso o this é a $div, toda vez que clicar na div vai tirar e colocar a class blue.
