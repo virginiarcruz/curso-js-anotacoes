@@ -20,6 +20,7 @@ EXEMPLO:
             console.log(scope);
 
         })();
+        
 - Scope só vai ser acessado dentro da IIFE.
 
 EXEMPLO 2:
