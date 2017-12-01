@@ -1,7 +1,37 @@
 # AJAX
 
 
-# Resulvendo o problema de Cors
+# AJAX
+
+* Utilizando o Node do lado do servidor.
+
+
+* Exemplo de Rest API com Express [ver exemplos/challenge-32]
+
+    - Rest API - é uma aplicação de servidor que responde através de rotas.
+    - precisa ter instalado o Node na máquina
+    - entrar na pasta rest-api e executar, o seguinte comando para subir o servidor.
+    
+                node index.js
+
+    - Instalar o nodemon
+    - Executar 'nodemon index.js' pra ele ficar ouvindo suas alterações e subir o servidor.
+    - Adicionar um objeto em branco no package.json
+    - Execute **npm install --save express**
+    - Executar 'nodemon index.js'
+    - No index.js adiconar os itens.
+    - faz um get /, ou seja, pra quando acessar a raiz da aplicação mandar uma resposta
+    - Para criar novas rotas (páginas)
+    
+                    app.get('/user', function (req, res) {
+                        res.send('User');
+                    });
+
+                    app.get('/arroz', function (req, res) {
+                        res.send('Arroz');
+                    });
+
+# Resolvendo o problema de Cors
 
 * instalar o módulo cors
     - vai permitir que faça uma requisição para o servidor e que não tenha bloqueio.
