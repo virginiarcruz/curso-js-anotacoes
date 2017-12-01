@@ -20,7 +20,7 @@ EXEMPLO:
             console.log(scope);
 
         })();
-        
+
 - Scope só vai ser acessado dentro da IIFE.
 
 EXEMPLO 2:
@@ -51,6 +51,7 @@ EXEMPLO 2:
 - Chamando várias vezes ele incrementa de 1 por um até 4, isso sem a function ohterFunction
 
 - Executando a otherFunction(), antes do increment, vai começar do 150, porque o counter de fora, compartilha.
+
 - Para manter o incremento de forma correta, você chama outra function dentro da IIFE
 
         (function(){
